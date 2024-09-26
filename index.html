@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+#form1{
+    margin-top: 10vh;
+   
+}
+#div1{
+    border: 2px solid;
+    width: 30vw;
+text-align: center;
+margin-left: 30vw;
+margin-top: 5vw;
+}
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <h4>local storage $ session storage</h4>
+    <form id="form1"> 
+<input type="text" placeholder="enter surname" id="id1">
+<input type="text" placeholder="name" id="id2"><br><br>
+ <input type="text" id="id3" placeholder="enter mail">
+<input type="text" id="id4" placeholder="enter your email"><br><br>
+<input type="submit" id="sub"><br>
+
+    </form>
+    <p></p>
+    <p id="id5"></p>
+</div>
+    <script>
+
+let form=document.getElementById("form1")
+form.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    let id1=document.getElementById("id1")
+    let id2=document.getElementById("id2")
+ let id3=document.getElementById("id3")
+let id4=document.getElementById("id4")
+    res=id1.value+" "+id2.value
+ res1=id3.value+" "+id4.value
+let p=document.getElementsByTagName("p")
+p[0].innerHTML=res
+ let v=document.getElementById("id5")
+ v.innerHTML=res1
+localStorage.setItem(id1.value,id2.value)
+localStorage.setItem(id3.value,id4.value)
+sessionStorage.setItem(id1.value,id2.value)
+sessionStorage.setItem(id3.value,id4.value)
+})
+
+    </script>
+</body>
+</html>
